@@ -1,8 +1,7 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:8.6.1
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.17.0
 
-# ปิดระบบ clustering ให้เป็น single-node
 ENV discovery.type=single-node
 ENV xpack.security.enabled=false
-ENV ES_JAVA_OPTS="-Xms512m -Xmx512m"
+ENV ES_JAVA_OPTS="-Xms256m -Xmx256m"
 
 EXPOSE 9200
